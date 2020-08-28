@@ -2,12 +2,6 @@
 from imblearn.over_sampling import RandomOverSampler
 from imblearn.over_sampling import ADASYN
 from imblearn.over_sampling import SMOTE
-from sklearn.model_selection import train_test_split
-
-def _splitdata(data, label):
-       x_train, x_test, y_train, y_test = train_test_split(
-           data, label, stratify=label, test_size=.1, random_state=50)
-       return x_train, x_test, y_train, y_test
 
 
 def DealwithSample(data, label, method="ADA"):

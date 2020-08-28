@@ -14,11 +14,14 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import GridSearchCV
 
 class Modelling():
-    def __init__(self, data,  label ):
-        self.data = data
-        self.label = label 
+    def __init__(self):
+        pass
 
-    
+    def _splitdata(self, data, label):
+        x_train, x_test, y_train, y_test = train_test_split(
+            data, label, stratify=label, test_size=.1, random_state=50)
+        return x_train, x_test, y_train, y_test
+
     def Prediction(self, x_train, x_test, y_train, y_test, method="Logistic"):
         if method== "Logistic":
             model = LogisticRegression(random_state=6)
