@@ -9,7 +9,7 @@ from preprocessing import Preprocessor
 
 
 class ModelTraining():
-    def __init__(self, path='/data/bank-additional-full.csv', label="y", scaler= 'RobustScaler', sampler="SMOTE", model="RandomForest", validate=0.1, testdata=None):
+    def __init__(self, path='data/bank-additional-full.csv', label="y", scaler= 'RobustScaler', sampler="SMOTE", model="RandomForest", validate=0.1, testdata=None):
         self.path = path
         self.scaler = scaler
         self.sampler = sampler
@@ -20,8 +20,8 @@ class ModelTraining():
 
     def train(self):
         print(path)
-        if self.path == '/data/bank-additional-full.csv':
-            data = pd.read_csv('/home/mahveotm/Desktop/Project/PredictingLikelyCustomerPurchase/data/bank-additional-full.csv', sep=';')
+        if self.path == 'data/bank-additional-full.csv':
+            data = pd.read_csv('data/bank-additional-full.csv', sep=';')
             data['y'] = data['y'].map({'yes': 1, 'no': 0})
         else:
             data = pd.read_csv('path')
@@ -42,7 +42,7 @@ class ModelTraining():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser = argparse.ArgumentParser(description="Base Models")
-    parser.add_argument('--path', default='/data/bank-additional-full.csv',
+    parser.add_argument('--path', default='data/bank-additional-full.csv',
                     help='If there is anywhere you saved the train data, you can specify a link or path')
     parser.add_argument('--label', default='y', help='If you wanted to specify the label of your data')
     parser.add_argument('--scaler',default='StandardScaler',
