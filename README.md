@@ -11,7 +11,7 @@ Clone this repository
 
 
 Install the requirements:
-```bash
+```
 pip3 install -r requirements.txt 
 ```
 
@@ -19,5 +19,6 @@ In this work you can specify almost everything but it is limited only to the opt
 
 ```
 Default method of running this model
-```bash
+
 ! python3 scripts/main.py 
+```
